@@ -1,0 +1,47 @@
+theme = "system"
+
+[overlay]
+mask_rgba = { r = 0, g = 0, b = 0, a = 140 }
+stroke_rgba = { r = 0, g = 210, b = 255, a = 255 }
+stroke_width = 2.0
+toolbar_position = "follow-cursor"
+show_magnifier = true
+show_size_label = true
+snap_to_windows = true
+dim_unfocused_monitors = true
+rainbow_border = true
+rainbow_speed = 0.35
+rainbow_width = 3.0
+
+[export]
+format = "png"
+jpeg_quality = 92
+webp_quality = 88
+webp_lossless = false
+avif_quality = 75.0
+avif_speed = 5
+filename_template = "screenshot_{timestamp}.{ext}"
+save_dir = "Pictures/Screenshots"
+auto_copy_clipboard = true
+auto_save = true
+open_after_save = false
+
+[behavior]
+delay_ms = 0
+freeze_screen_before_select = true
+play_sound = false
+remember_last_shape = true
+show_quick_tip = true
+min_selection_px = 6
+
+[hotkeys]
+confirm = "Enter"
+cancel = "Esc"
+copy = "Ctrl+C"
+save = "Ctrl+S"
+full_screen = "F"
+rectangle = "R"
+ellipse = "E"
+lasso = "L"
+polygon = "P"
+window = "W"

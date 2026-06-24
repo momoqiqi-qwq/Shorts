@@ -1,0 +1,37 @@
+[package]
+name = "shotrs"
+version = "0.1.0"
+edition = "2021"
+authors = ["Shotrs contributors"]
+description = "Cross-platform desktop screenshot tool built with egui, eframe and xcap"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+eframe = { version = "0.34.3", default-features = true, features = ["persistence"] }
+egui = "0.34.3"
+xcap = "0.9.6"
+image = { version = "0.25.8", default-features = true, features = ["png", "jpeg", "bmp", "gif", "webp"] }
+ravif = { version = "0.13.0", default-features = true }
+arboard = "3.6"
+serde = { version = "1", features = ["derive"] }
+toml = "0.9"
+dirs = "6"
+chrono = { version = "0.4", features = ["serde", "clock"] }
+clap = { version = "4.5", features = ["derive"] }
+anyhow = "1"
+thiserror = "2"
+webp = "0.3.1"
+open = "5"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
+opt-level = "z"
+panic = "abort"
+
+[package.metadata.winres]
+OriginalFilename = "shotrs.exe"
+LegalCopyright = "Copyright (c) Shotrs contributors"
+ProductName = "Shotrs"
+FileDescription = "Small cross-platform screenshot tool"

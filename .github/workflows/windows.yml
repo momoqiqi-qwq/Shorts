@@ -1,0 +1,22 @@
+name: Build Windows exe
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Build release
+        run: cargo build --release
+      - name: Upload exe
+        uses: actions/upload-artifact@v4
+        with:
+          name: shotrs-windows-x64
+          path: target/release/shotrs.exe
