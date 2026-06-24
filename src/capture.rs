@@ -70,7 +70,7 @@ fn capture_monitor(monitor: Monitor) -> anyhow::Result<ScreenFrame> {
 
 pub fn capture_region(x: i32, y: i32, width: u32, height: u32) -> anyhow::Result<ScreenFrame> {
     let monitor = Monitor::from_point(x, y)?;
-    let image = monitor.capture_region(x, y, width.max(1), height.max(1))?;
+    let image = monitor.capture_region(x as u32, y as u32, width.max(1), height.max(1))?;
     Ok(ScreenFrame {
         image,
         origin_x: x,

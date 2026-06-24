@@ -288,7 +288,9 @@ pub fn draw_mask_with_hole(painter: &egui::Painter, screen: egui::Rect, selectio
                 painter.rect_filled(egui::Rect::from_min_max(egui::pos2(screen.min.x, hole.top()), egui::pos2(hole.left(), hole.bottom())), 0.0, mask);
                 painter.rect_filled(egui::Rect::from_min_max(egui::pos2(hole.right(), hole.top()), egui::pos2(screen.max.x, hole.bottom())), 0.0, mask);
             }
-            ShapeKind::Lasso | ShapeKind::Polygon => painter.rect_filled(screen, 0.0, mask.gamma_multiply(0.72)),
+            ShapeKind::Lasso | ShapeKind::Polygon => {
+                painter.rect_filled(screen, 0.0, mask.gamma_multiply(0.72));
+            }
         }
     } else {
         painter.rect_filled(screen, 0.0, mask);

@@ -421,7 +421,8 @@ impl ShotrsApp {
                         .and_then(|frame| shape::crop_selection(frame, &selection, display_rect))
                 })
             } else {
-                anyhow::bail!("No window selected");
+                self.status = "No window selected".to_owned();
+                return;
             }
         } else {
             self.frame

@@ -42,7 +42,7 @@ impl ThemePalette {
 }
 
 pub fn apply_theme(ctx: &egui::Context, config: &AppConfig) {
-    let system_dark = ctx.input(|input| input.system_theme == Some(egui::Theme::Dark));
+    let system_dark = ctx.input(|input| input.raw.system_theme == Some(egui::Theme::Dark));
     let palette = ThemePalette::from_config(config, system_dark);
 
     match config.theme {
@@ -57,7 +57,7 @@ pub fn apply_theme(ctx: &egui::Context, config: &AppConfig) {
         }
     }
 
-    ctx.style_mut(|style| {
+    ctx.global_style_mut(|style| {
         style.spacing.item_spacing = egui::vec2(8.0, 8.0);
         style.spacing.button_padding = egui::vec2(10.0, 6.0);
         style.visuals.widgets.active.bg_fill = palette.accent.gamma_multiply(0.22);
