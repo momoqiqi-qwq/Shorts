@@ -1,12 +1,14 @@
 <div align="center">
 
-<img src="./assets/readme-hero.svg" alt="Shorts" width="1000" />
+<img src="./assets/hero.svg" alt="Shorts" width="1000" />
 
 **Shorts**
 
 [![stars](https://img.shields.io/github/stars/momoqiqi-qwq/Shorts?style=for-the-badge&color=f5c518&labelColor=2b2b2b)](https://github.com/momoqiqi-qwq/Shorts/stargazers) ![license](https://img.shields.io/github/license/momoqiqi-qwq/Shorts?style=for-the-badge&color=3da639) ![Rust](https://img.shields.io/badge/Rust-CE6A2B?style=for-the-badge&logo=rust&logoColor=white)
 
 </div>
+
+---
 
 <details open>
 <summary><b>目录</b></summary>
